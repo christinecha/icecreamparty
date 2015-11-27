@@ -1,0 +1,33 @@
+.design-tool {
+}
+
+.display-box {
+}
+
+#icecream-top--container, #icecream-cone--container {
+  width: 200px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#icecream-cone--container {
+  margin-top: -8px;
+}
+
+.icecream-top {
+  fill: #fff;
+  stroke: #000000;
+  stroke-width: 3;
+}
+
+.icecream-cone {
+  fill: #ECAD6B;
+  stroke: #000000;
+  stroke-width: 3;
+}
+
+#sprinkles path {
+  stroke: #000000;
+  stroke-width: 3;
+}

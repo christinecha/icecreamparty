@@ -1,0 +1,15 @@
+{
+  "name": "icecreamparty",
+  "version": "1.0.0",
+  "description": "ice cream party",
+  "main": "app.js",
+  "readme": "",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3"
+  }
+}
