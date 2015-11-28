@@ -1,9 +1,22 @@
-.container-fluid { width: 90%; }
+.container-fluid { width: 90%; max-width: 1000px; }
 * {
   font-family: 'Quicksand', sans-serif;
   text-transform: lowercase;
   text-align: center;
 }
+
+button.large {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 50px;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #1bdaff;
+  margin-top: 40px;
+}
+button:hover { opacity: .6; }
 
 .tool-box {
   text-align: center;

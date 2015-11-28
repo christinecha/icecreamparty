@@ -23,7 +23,7 @@
     <br>
     <div class="design-tool row">
 
-      <div class="tool-box col-sm-4">
+      <div class="tool-box col-sm-5">
         <div class="tools">
           <div class="option flavors">
             <h3>Pick a Flavor</h3>
@@ -45,11 +45,18 @@
             <div data="fudge">confetti</div>
             <div data="random">random</div>
           </div>
+
+          <form id="submitDesign">
+            <input type="hidden" id="flavor" value="vanilla">
+            <input type="hidden" id="cone" value="wafer">
+            <input type="hidden" id="toppings">
+            <button class="large">all set!</button>
+          </form>
         </div>
       </div>
 
 
-      <div class="display-box col-sm-8">
+      <div class="display-box col-sm-7">
         <div id="icecream-top--container"></div>
         <div id="icecream-cone--container"></div>
       </div>
