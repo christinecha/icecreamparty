@@ -1,3 +1,5 @@
+$('#header').load('/header');
+
 $('#icecream-cone--container').load('/icecream/cone', function(){
   $('.sugar').hide();
 

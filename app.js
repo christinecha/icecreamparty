@@ -15,6 +15,10 @@ app.get("/", function (req, res) {
   res.render("index.ejs");
 });
 
+app.get("/header", function (req, res) {
+  res.render("_header.ejs");
+});
+
 app.get("/icecream/:part", function(req, res) {
   var keyword = req.params.part;
   var url = "icecream/" + keyword + ".ejs";

@@ -16,7 +16,19 @@ button.large {
   background-color: #1bdaff;
   margin-top: 40px;
 }
+
 button:hover { opacity: .6; }
+
+.nav {
+  height: 50px;
+  background-color: #fafafa;
+  width: 100%;
+  margin-left: 0;
+  padding: 12px 20px;
+  font-weight: bold;
+}
+
+.nav div { text-align: left; }
 
 .tool-box {
   text-align: center;
