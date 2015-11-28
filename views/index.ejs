@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="" />
     <!-- FONTS -->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,300,700|Quicksand:300,700' rel='stylesheet' type='text/css'>
     <!-- STYLES -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -18,12 +18,41 @@
 </head>
 
 <body>
+  <div class="container-fluid">
+    <h1>Make Your Own Ice Cream</h1>
+    <br>
+    <div class="design-tool row">
 
-  <h1>Make Your Own Ice Cream</h1>
-  <div class="design-tool">
-    <div class="display-box">
-      <div id="icecream-top--container"></div>
-      <div id="icecream-cone--container"></div>
+      <div class="tool-box col-sm-4">
+        <div class="tools">
+          <div class="option flavors">
+            <h3>Pick a Flavor</h3>
+            <div data="#774800">chocolate</div>
+            <div class="selected" data="#ffffff">vanilla</div>
+            <div data="#ffb3b7">strawberry</div>
+            <div data="random">random</div>
+          </div>
+
+          <div class="option cones">
+            <h3>choose a cone</h3>
+            <div class="selected" data="wafer">wafer</div>
+            <div data="sugar">sugar</div>
+          </div>
+
+          <div class="option toppings">
+            <h3>get your toppings</h3>
+            <div data="sprinkles">sprinkles</div>
+            <div data="fudge">confetti</div>
+            <div data="random">random</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="display-box col-sm-8">
+        <div id="icecream-top--container"></div>
+        <div id="icecream-cone--container"></div>
+      </div>
     </div>
   </div>
 

@@ -4,7 +4,9 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 259 267" style="enable-background:new 0 0 259 267;" xml:space="preserve">
 <g>
-	<polygon class="icecream-cone" points="45,53 214,53 218,1 41,1 	"/>
-	<polygon class="icecream-cone" points="71.1,212.2 187.9,212.2 205,53 54,53 	"/>
+	<polygon class="icecream-cone wafer" points="45,53 214,53 218,1 41,1 	"/>
+	<polygon class="icecream-cone wafer" points="71.1,212.2 187.9,212.2 205,53 54,53 	"/>
+
+	<path class="icecream-cone sugar" d="M41,1.5l77.6,232.8c3.5,10.5,18.3,10.5,21.8,0L218,1.5H41z"/>
 </g>
 </svg>

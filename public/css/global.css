@@ -1,7 +1,31 @@
-.design-tool {
+.container-fluid { width: 90%; }
+* {
+  font-family: 'Quicksand', sans-serif;
+  text-transform: lowercase;
+  text-align: center;
 }
 
+.tool-box {
+  text-align: center;
+  padding: 0 30px;
+}
+
+.tools {
+  text-align: center;
+}
+
+.option div {
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: .05em;
+}
+
+.option div:hover { text-decoration: underline; }
+.option div.selected { color: #ff599a; }
+
 .display-box {
+  background-color: #fafafa;
+  padding: 50px;
 }
 
 #icecream-top--container, #icecream-cone--container {
