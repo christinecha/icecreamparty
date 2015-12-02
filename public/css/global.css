@@ -76,7 +76,15 @@ button:hover { opacity: .6; }
   stroke-width: 3;
 }
 
-#sprinkles path {
+#sprinkles path, #fudge path, #cherry path {
   stroke: #000000;
   stroke-width: 3;
+}
+
+#fudge path {
+  fill: #2a1600;
+}
+
+#cherry path {
+  fill: #ba2600;
 }
