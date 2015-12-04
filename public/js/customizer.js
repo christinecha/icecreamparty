@@ -40,8 +40,9 @@ $('#icecream-top--container').load('/icecream/top', function(){
   $('.flavors').on('click', 'div', function(){
     $(this).siblings().removeClass('selected');
     $(this).addClass('selected');
-    var color = $(this).attr('data');
-    if (color == 'random') {
+    var flavor = $(this).attr('data');
+    var color = $(this).attr('data-color');
+    if (flavor == 'random') {
       var characters = ['1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f'];
       var hex = '#';
       for (var i = 0; i < 6; i ++) {
@@ -52,7 +53,7 @@ $('#icecream-top--container').load('/icecream/top', function(){
       color = hex;
     };
     $('.icecream-top').css('fill', color);
-    $('#flavor').val(color);
+    $('#flavor').val(flavor);
   });
 
   $('.toppings').on('click', 'div', function(){
@@ -115,10 +116,10 @@ $('.hardware').on('click', 'div', function(){
   var hardware = $(this).attr('data');
   var price = $(this).attr('data-price');
   switch (hardware) {
-    case "stud":
+    case "stud earring":
       //display something
       break;
-    case "hook":
+    case "hook earring":
       //display something
       break;
     case "necklace":
@@ -154,12 +155,21 @@ $('#submitDesign').on('submit', function(e) {
   var flavor = $('#flavor').val();
   var cone = $('#cone').val();
   var toppings = $('#toppings').val();
+  var size = $('#size').val();
+  var hardware = $('#hardware').val();
+  var quantity = $('#quantity').val();
   var totalprice = $('#totalprice').val();
   ref.child('sessions').child(currentSessionId).child('orders').push({
     flavor: flavor,
     cone: cone,
     toppings: toppings,
+    size: size,
+    hardware: hardware,
+    quantity: quantity,
+    totalprice: totalprice,
     createdAt: Firebase.ServerValue.TIMESTAMP,
   })
+  $('#cartPreview').show('slide', {direction: 'right'}, 600);
+  $('.pageMask').show();
   return false;
 });

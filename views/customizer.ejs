@@ -35,9 +35,9 @@
         <div class="tools">
           <div class="option flavors">
             <h3 class="light-gray">pick a flavor</h3>
-            <div data="#774800">chocolate</div>
-            <div class="selected" data="#ffffff">vanilla</div>
-            <div data="#ffb3b7">strawberry</div>
+            <div data="chocolate" data-color="#774800">chocolate</div>
+            <div data="vanilla" data-color="#ffffff" class="selected">vanilla</div>
+            <div data="strawberry" data-color="#ffb3b7">strawberry</div>
             <div data="random">random</div>
           </div>
 
@@ -63,6 +63,8 @@
           <input type="hidden" id="flavor" value="vanilla">
           <input type="hidden" id="cone" value="wafer">
           <input type="hidden" id="toppings">
+          <input type="hidden" id="hardware" value="hook">
+          <input type="hidden" id="size" value="medium">
           <input type="hidden" id="price--size" value="8.5">
           <input type="hidden" id="price--hardware" value="1">
           <input type="hidden" id="quantity" value="1">
@@ -86,8 +88,8 @@
 
           <div class="option hardware">
             <h3 class="light-gray" data-price="1">need some hardware?</h3>
-            <div data="stud" data-price="1" class="small-only" style="display:none;">stud earring (small only)</div>
-            <div data="hook" data-price="1" class="selected" >hook earring</div>
+            <div data="stud earring" data-price="1" class="small-only" style="display:none;">stud earring (small only)</div>
+            <div data="hook earring" data-price="1" class="selected" >hook earring</div>
             <div data="necklace" data-price="5">necklace chain</div>
             <div data="ring" data-price="3">ring</div>
           </div>

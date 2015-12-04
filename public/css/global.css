@@ -11,12 +11,17 @@ h1 {
   font-weight: 200;
   font-size: 80px;
 }
+
 h5 { font-size: 16px; }
+
+a { cursor: pointer; }
 
 ul {
   list-style: none;
   text-align: right;
 }
+
+img { max-width: 100%; }
 
 .italic { font-style: italic; }
 .pink { color: #EFBBB0; }
@@ -55,6 +60,36 @@ button:hover { opacity: .6; }
 .nav ul li {
   display: inline-block;
   margin-right: 15px;
+}
+
+.pageMask {
+  background-color: rgba(0,0,0,.3);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+#cartPreview {
+  position: fixed;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 350px;
+  display: none;
+}
+
+#cartPreview .exitCartPreview {
+  padding: 10px 20px;
+  background-color: #eee;
+}
+
+#cartPreview .order-item--preview {
+  padding: 15px 20px;
 }
 
 #footer {
