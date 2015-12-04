@@ -19,6 +19,10 @@ app.get("/customizer", function (req, res) {
   res.render("customizer.ejs");
 });
 
+app.get("/checkout", function (req, res) {
+  res.render("checkout.ejs");
+});
+
 app.get("/partials/:path", function (req, res) {
   var path = req.params.path;
   var file = 'partials/_' + path + '.ejs';

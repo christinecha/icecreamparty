@@ -4,6 +4,9 @@
   "description": "ice cream party",
   "main": "app.js",
   "readme": "",
+  "engines": {
+    "node": "4.1.1"
+  },
   "scripts": {
     "start": "node app.js"
   },

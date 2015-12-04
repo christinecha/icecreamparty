@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="" />
+    <!-- FONTS -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,300,700|Quicksand:300,700' rel='stylesheet' type='text/css'>
+    <!-- STYLES -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/global.css" rel="stylesheet" type="text/css">
+    <link href="css/checkout.css" rel="stylesheet" type="text/css">
+    <!-- JS-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <title>ice cream party</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div id="header" class="row">
+    </div>
+
+    <div class="row" id="checkout-banner">
+        <h1 class="italic pink">checkout</h1>
+      </div>
+    </div>
+
+    <div class="row" id="order-item--list">
+      <div class="order-item row">
+        <div class="col-md-4">
+          pic
+        </div>
+        <div class="col-md-8">
+          info
+        </div>
+      </div>
+      <div class="order-item row">
+        <div class="col-md-4">
+          pic
+        </div>
+        <div class="col-md-8">
+          info
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="payment-info">
+      <form action="" method="POST" id="payment-form">
+        <span class="payment-errors"></span>
+
+        <div class="form-row">
+            <span>Card Number</span>
+            <input type="text" size="20" data-stripe="number"/>
+        </div>
+
+        <div class="form-row">
+            <span>CVC</span>
+            <input type="text" size="4" data-stripe="cvc"/>
+        </div>
+
+        <div class="form-row">
+          <span>Expiration (MM/YYYY)</span>
+          <input type="text" size="2" data-stripe="exp-month"/>
+          <span> / </span>
+          <input type="text" size="4" data-stripe="exp-year"/>
+        </div>
+
+        <button type="default large">submit payment</button>
+      </form>
+    </div>
+
+
+
+    <div id="footer" class="row">
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/global.js"></script>
+  <script type="text/javascript" src="js/customizer.js"></script>
+</body>
+
+
+
+
+</html>

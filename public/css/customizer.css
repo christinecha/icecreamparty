@@ -3,3 +3,95 @@
   padding: 30px 0;
   margin-bottom: 30px;
 }
+
+.option {
+  border: 1px solid #eee;
+  padding: 30px;
+  margin: 10px 0;
+}
+
+input[type="number"] {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+  max-width: 100px;
+}
+
+#totalprice {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  color: #888;
+  font-size: 16px;
+  max-width: 60px;
+}
+
+.option .inactive {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.tool-box {
+  text-align: center;
+  padding: 0 30px;
+}
+
+.tools {
+  text-align: center;
+}
+
+.option div {
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: .05em;
+}
+
+.option div:hover { text-decoration: underline; }
+.option div.selected { color: #ff599a; }
+
+.display-box {
+  background-color: #fafafa;
+  padding: 50px;
+}
+
+#icecream-top--container, #icecream-cone--container {
+  width: 180px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#icecream-cone--container {
+  margin-top: -8px;
+}
+
+.icecream-top {
+  fill: #fff;
+  stroke: #000000;
+  stroke-width: 3;
+}
+
+.icecream-cone {
+  fill: #ECAD6B;
+  stroke: #000000;
+  stroke-width: 3;
+}
+
+#sprinkles path, #fudge path, #cherry path {
+  stroke: #000000;
+  stroke-width: 3;
+}
+
+#fudge path {
+  fill: #2a1600;
+}
+
+#cherry path {
+  fill: #ba2600;
+}
+
+#addToCart {
+  margin-top: -10px;
+  z-index: 5000;
+  position: absolute;
+}

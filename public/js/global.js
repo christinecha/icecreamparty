@@ -1,79 +1,31 @@
 $('#header').load('/partials/header');
 $('#footer').load('/partials/footer');
 
-$('#icecream-cone--container').load('/icecream/cone', function(){
-  $('.sugar').hide();
+var ref = new Firebase("https://miniscoopshop.firebaseio.com");
+var currentSessionId;
 
-  $('.cones').on('click', 'div', function(){
-    $(this).siblings().removeClass('selected');
-    $(this).addClass('selected');
-    $('.icecream-cone').hide();
-    var type = $(this).attr('data');
-    switch (type) {
-      case "sugar":
-        $('.sugar').show();
-        break;
-      case "wafer":
-        $('.wafer').show();
-        break;
-    };
-  });
-});
+function authDataCallback(authData)
+{
+  if (authData) {
+    console.log("User " + authData.uid + " is logged in with " + authData.provider);
+    currentSessionId = authData.uid;
+    ref.child("sessions").child(authData.uid).update({
+      lastOnline: Firebase.ServerValue.TIMESTAMP,
+    });
+  } else {
+    console.log("User is logged out");
+    newSession();
+  }
+}
 
-$('#icecream-top--container').load('/icecream/top', function(){
-  $('#sprinkles').hide();
-  $('#fudge').hide();
-  $('#cherry').hide();
-
-  var colors = ["#ffeeff", "ffe54c", "ff59b1", "009ee3"];
-  var index = Math.round(Math.random() * (colors.length - 1));
-
-  $('#sprinkles').children('path').each(function(){
-    var color = colors[index];
-    $(this).css('fill', color);
-    if (index >= colors.length - 1) {
-      index = 0;
+var newSession = function(){
+  ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
     } else {
-      index+= 1;
+      console.log("Authenticated successfully with payload:", authData);
     }
   });
+};
 
-  $('.flavors').on('click', 'div', function(){
-    $(this).siblings().removeClass('selected');
-    $(this).addClass('selected');
-    var color = $(this).attr('data');
-    if (color == 'random') {
-      var characters = ['1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f'];
-      var hex = '#';
-      for (var i = 0; i < 6; i ++) {
-        var random = Math.round(Math.random() * (characters.length - 1));
-        hex+= characters[random];
-        console.log(hex);
-      };
-      color = hex;
-    };
-    $('.icecream-top').css('fill', color);
-  });
-
-  $('.toppings').on('click', 'div', function(){
-    $(this).toggleClass('selected');
-    var topping = $(this).attr('data');
-    switch (topping) {
-      case "sprinkles":
-        $('#sprinkles').toggle();
-        break;
-      case "fudge":
-        $('#fudge').toggle();
-        break;
-      case "cherry":
-        $('#cherry').toggle();
-        break;
-    };
-  });
-});
-
-// submit form
-
-// $('#submitDesign').on('submit', function() {
-//   var flavor =
-// });
+ref.onAuth(authDataCallback);
