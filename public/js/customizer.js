@@ -158,7 +158,9 @@ $('#submitDesign').on('submit', function(e) {
   var size = $('#size').val();
   var hardware = $('#hardware').val();
   var quantity = $('#quantity').val();
-  var totalprice = $('#totalprice').val();
+  var sizePrice = Number($('#price--size').val());
+  var hardwarePrice = Number($('#price--hardware').val());
+  var totalprice = (sizePrice + hardwarePrice) * quantity;
   ref.child('sessions').child(currentSessionId).child('orders').push({
     flavor: flavor,
     cone: cone,

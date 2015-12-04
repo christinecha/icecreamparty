@@ -86,10 +86,23 @@ button:hover { opacity: .6; }
 #cartPreview .exitCartPreview {
   padding: 10px 20px;
   background-color: #eee;
+  margin-bottom: 10px;
+}
+
+#cartPreview .order-items {
+  overflow: scroll;
+  max-height: 80%;
 }
 
 #cartPreview .order-item--preview {
   padding: 15px 20px;
+}
+
+#cartPreview .checkout {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  width: 90%;
 }
 
 #footer {

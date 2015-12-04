@@ -7,17 +7,22 @@ var currentSessionId;
 //// CART PREVIEW
 
 var getCartItems = function(){
+  var currentOrderTotal = 0;
   ref.child('sessions').child(currentSessionId).child('orders').on("child_added", function(snapshot) {
     var order = snapshot.val();
     var $orderItemImage = $('<img>').attr('src', '/assets/featured_placeholder.jpg');
     var $orderItemTitle = $('<h5>').html(order.flavor + ' ' + order.cone + ' cone');
     var $orderItemHardware = $('<p>').html(order.size + ' | ' + order.hardware + ' x' + order.quantity).addClass('xsmall');
-    var $orderItemPrice = $('<h5>').html(order.totalprice);
+    var $orderItemPrice = $('<h5>').html('$' + order.totalprice.toFixed(2));
     var $imageContainer = $('<div>').addClass('order-item--preview--image col-md-4').append($orderItemImage);
     var $detailsContainer = $('<div>').addClass('order-item--preview--details col-md-8 text-left').append($orderItemTitle, $orderItemHardware, $orderItemPrice);
     var $orderPreview = $('<div>').addClass('order-item--preview row').append($imageContainer).append($detailsContainer);
 
-    $('#cartPreview').append($orderPreview);
+    $('#cartPreview .order-items').append($orderPreview);
+    $('.checkout-order-items').append($orderPreview.clone());
+    currentOrderTotal+= Number(order.totalprice);
+    $('#subtotal').html(currentOrderTotal.toFixed(2));
+    $('#total-charge').html((currentOrderTotal + 5).toFixed(2)).attr('data', (currentOrderTotal + 5));
   });
 };
 
