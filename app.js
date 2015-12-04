@@ -12,17 +12,23 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", function (req, res) {
-  res.render("index.ejs");
+  res.render("home.ejs");
 });
 
-app.get("/header", function (req, res) {
-  res.render("_header.ejs");
+app.get("/customizer", function (req, res) {
+  res.render("customizer.ejs");
 });
 
-app.get("/icecream/:part", function(req, res) {
-  var keyword = req.params.part;
-  var url = "icecream/" + keyword + ".ejs";
-  res.render(url);
+app.get("/partials/:path", function (req, res) {
+  var path = req.params.path;
+  var file = 'partials/_' + path + '.ejs';
+  res.render(file);
+});
+
+app.get("/icecream/:path", function(req, res) {
+  var path = req.params.path;
+  var file = "icecream/" + path + ".ejs";
+  res.render(file);
 });
 
 

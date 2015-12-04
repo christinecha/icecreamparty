@@ -10,6 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/global.css" rel="stylesheet" type="text/css">
+    <link href="css/customizer.css" rel="stylesheet" type="text/css">
     <!-- JS-->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
@@ -18,12 +19,17 @@
 </head>
 
 <body>
-  <div id="header">
-  </div>
-
   <div class="container-fluid">
-    <h1>Make Your Own Ice Cream</h1>
-    <br>
+
+    <div id="header" class="row">
+    </div>
+
+    <div class="row" id="customizer-banner">
+        <h1 class="italic pink">create your own</h1>
+        <h3 class="medium-gray">delicious-looking jewelry</h3>
+      </div>
+    </div>
+
     <div class="design-tool row">
 
       <div class="tool-box col-sm-5">
@@ -63,10 +69,13 @@
         <div id="icecream-cone--container"></div>
       </div>
     </div>
+
+    <div id="footer" class="row">
+    </div>
   </div>
 
   <script type="text/javascript" src="js/global.js"></script>
-
+  <script type="text/javascript" src="js/customizer.js"></script>
 </body>
 
 

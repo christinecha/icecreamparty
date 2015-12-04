@@ -1,0 +1,25 @@
+#homepage-banner {
+  height: 500px;
+  background-image: url('/assets/homepage_banner.png');
+  background-size: cover;
+}
+
+@media (max-width: 991px) {
+  #homepage-banner {
+    height: 300px;
+    background-image: none;
+    background-color: #eee;
+  }
+}
+
+.featured-product {
+  width: 300px;
+  border: 1px solid #eee;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 20px;
+}
+
+.featured-product--showcase {
+  padding: 50px 20px;
+}

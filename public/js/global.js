@@ -1,4 +1,5 @@
-$('#header').load('/header');
+$('#header').load('/partials/header');
+$('#footer').load('/partials/footer');
 
 $('#icecream-cone--container').load('/icecream/cone', function(){
   $('.sugar').hide();
@@ -70,3 +71,9 @@ $('#icecream-top--container').load('/icecream/top', function(){
     };
   });
 });
+
+// submit form
+
+// $('#submitDesign').on('submit', function() {
+//   var flavor =
+// });
