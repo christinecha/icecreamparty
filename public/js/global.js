@@ -17,9 +17,9 @@ var getCartItems = function(){
     var $orderPreview = $('<div>').addClass('order-item').append($orderPreview).append($orderDetails);
 
     $('#cart #order-items').append($orderPreview);
-    currentOrderTotal+= Number(order.totalprice);
-    $('#subtotal').html(currentOrderTotal.toFixed(2));
-    $('#total-charge').html((currentOrderTotal + 5).toFixed(2)).attr('data', (currentOrderTotal + 5));
+    currentOrderTotal+= Number(order.subtotal);
+    $('#cart-subtotal').html('$' + currentOrderTotal.toFixed(2));
+    $('#cart-total').html('$' + (currentOrderTotal + 5).toFixed(2)).attr('data', (currentOrderTotal + 5));
 
     customizeIceCream('#' + snapshot.key(), order);
   });
@@ -56,6 +56,10 @@ $("#flip-container").flip({
   trigger: 'manual'
 });
 
-$('#header').on('click', '.toggleCartPreview', function() {
-  $("#flip-container").flip('toggle');
+$('#header').on('click', '.showCart', function() {
+  $("#flip-container").flip(true);
+});
+
+$('#header').on('click', '.showEditor', function() {
+  $("#flip-container").flip(false);
 });

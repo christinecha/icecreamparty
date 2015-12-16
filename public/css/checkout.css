@@ -1,18 +1,22 @@
-#payment-form {
+#newCharge {
   padding: 20px;
   width: 100%;
 }
 
-#payment-form .label {
+#newCharge .label {
   display: block;
   color: #888;
   text-align: left;
   padding: 0 0 5px 0;
 }
 
-#payment-form input {
+#newCharge input {
   margin-bottom: 10px;
   width: 100%;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border: none;
+}
+
+#newCharge .form-group {
+  margin-bottom: 0;
 }

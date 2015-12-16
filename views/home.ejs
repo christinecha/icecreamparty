@@ -14,11 +14,16 @@
     <link href="css/cart.css" rel="stylesheet" type="text/css">
     <link href="css/checkout.css" rel="stylesheet" type="text/css">
     <!-- JS-->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.18/dist/jquery.flip.min.js"></script>
     <title>ice cream party</title>
+    <script type="text/javascript">
+      Stripe.setPublishableKey('<%= stripe_publishable %>');
+    </script>
 </head>
 
 <body>

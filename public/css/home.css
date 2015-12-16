@@ -65,7 +65,7 @@
 
 .editor--option--dropdown .option {
   display: inline-block;
-  width: 31%;
+  margin: 0 8px;
 }
 
 .editor--option--dropdown .option.selected .thumb { border: 3px solid #ff8190; }

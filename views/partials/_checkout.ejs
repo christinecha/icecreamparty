@@ -1,38 +1,52 @@
-<form action="/newCharge" method="POST" id="payment-form" class="text-left">
+<form id="newCharge" action="/newCharge" method="post">
   <div class="text-center" style="width: 100%;">
-    <button class="medium white selected">billing</button>
-    <button class="medium white">shipping</button>
+    <button class="showBilling medium white selected" type="button">1. billing</button>
+    <button class="showShipping medium white inactive" type="button">2. shipping</button>
   </div>
+  <span class="payment-errors xsmall"></span><br>
 
   <div id="billing">
-    <span class="payment-errors"></span><br>
-
     <span class="xsmall label">FULL NAME</span>
-    <input type="text" size="20" data-stripe="name"/><br>
-
+    <input type="text" size="20" data-stripe="name" required /><br>
     <span class="xsmall label">CARD NO.</span>
-    <input type="text" size="20" data-stripe="number"/><br>
-
-    <div class="form-group inline">
+    <input type="text" size="20" data-stripe="number" required /><br>
+    <div class="form-group inline" style="margin-right: 29px">
       <span class="xsmall label">CVC</span>
-      <input type="text" size="4" data-stripe="cvc" style="width: 80px;"/>
+      <input type="text" size="4" data-stripe="cvc" style="width: 90px;" required />
     </div>
     <div class="form-group inline float-right">
       <span class="xsmall label">Expiration (MM/YY)</span>
-      <input type="text" size="2" data-stripe="exp-month" style="width: 70px;"/>
+      <input type="text" size="2" data-stripe="exp-month" style="width: 70px;" required />
       <span style="line-height: 28px; font-size: 22px;"> / </span>
-      <input type="text" size="4" data-stripe="exp-year" style="width: 70px;"/>
+      <input type="text" size="4" data-stripe="exp-year" style="width: 70px;" required />
     </div>
+    <span class="xsmall label">EMAIL</span>
+    <input type="email" size="20" data-stripe="email" required /><br>
+    <span class="xsmall label">PHONE</span>
+    <input type="text" size="20" data-stripe="phone" required /><br>
+    <br>
+    <button class="showShipping large full playfair" type="button">next: shipping info</button>
   </div>
 
-  <div id="shipping" style="display:none;">
-  <h3 class="text-left">Shipping Information</h3>
-  <br>
-  <span>ADDRESS</span><br>
-  <input type="text" size="20" data-stripe="address1"/><br>
-  <input type="text" size="20" data-stripe="address2"/>
-  <br><br>
+  <div id="shipping">
+    <span class="xsmall label">RECIPIENT NAME (if different)</span>
+    <input type="text" size="20" data-stripe="name" /><br>
+    <span class="xsmall label">ADDRESS</span>
+    <input type="text" size="20" data-stripe="address-1" required/><br>
+    <input type="text" size="20" data-stripe="address-2" /><br>
+    <div class="form-group inline">
+      <span class="xsmall label">CITY</span>
+      <input type="text" size="4" data-stripe="city" style="width: 140px;" required />
+    </div>
+    <div class="form-group inline">
+      <span class="xsmall label">STATE</span>
+      <input type="text" size="4" data-stripe="state" style="width: 60px;" required />
+    </div>
+    <div class="form-group inline float-right">
+      <span class="xsmall label">ZIP</span>
+      <input type="text" size="2" data-stripe="zip" style="width: 70px;" required />
+    </div>
+    <br><br>
+    <button class="large full playfair">submit your order</button>
   </div>
-
-  <button class="large full playfair">submit payment</button>
 </form>

@@ -1,6 +1,43 @@
-function stripeResponseHandler(status, response) {
-  var $form = $('#payment-form');
+var maximize = function(selector) {
+  $(selector).css({
+    'height': 'inherit',
+    'overflow': 'hidden',
+  });
+};
 
+var minimize = function(selector) {
+  $(selector).css({
+    'height': 0,
+    'overflow': 'hidden',
+  });
+};
+
+minimize('#shipping');
+
+$('.showShipping').on('click', function() {
+  $('#shipping input').first().focus();
+});
+
+$('.showBilling').on('click', function() {
+  $('#billing input').first().focus();
+});
+
+$('#billing input').on('focus', function() {
+  maximize('#billing');
+  minimize('#shipping');
+  $('.showShipping').removeClass('selected');
+  $('.showBilling').addClass('selected');
+});
+
+$('#shipping input').on('focus', function() {
+  maximize('#shipping');
+  minimize('#billing');
+  $('.showBilling').removeClass('selected');
+  $('.showShipping').addClass('selected');
+});
+
+function stripeResponseHandler(status, response) {
+  var $form = $('#newCharge');
   if (response.error) {
     // Show the errors on the form
     $form.find('.payment-errors').text(response.error.message);
@@ -18,15 +55,10 @@ function stripeResponseHandler(status, response) {
   }
 };
 
-jQuery(function($) {
-  $('#payment-form').submit(function(e) {
-    e.preventDefault();
-    var $form = $(this);
-
-    $form.find('button').prop('disabled', true);
-
-    Stripe.card.createToken($form, stripeResponseHandler);
-
-    return false;
-  });
+$('#newCharge').submit(function(e) {
+  e.preventDefault();
+  var $form = $(this);
+  $form.find('button').prop('disabled', true);
+  Stripe.card.createToken($form, stripeResponseHandler);
+  return false;
 });

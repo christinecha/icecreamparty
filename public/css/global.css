@@ -9,7 +9,7 @@
 
 body { max-width: 1500px; margin-left: auto; margin-right: auto; color: #888; }
 
-h1, h2, h3, h5 { font-family: 'Playfair Display', serif; margin-top: 0; }
+h1, h2, h3, h5 { font-family: 'Playfair Display', serif; margin: 0 0 0 0; }
 
 h1 {
   font-weight: 200;
@@ -31,6 +31,7 @@ img { max-width: 100%; }
 .float-right { float: right; }
 .playfair { font-family: 'Playfair Display', serif; }
 .quicksand { font-family: 'Quicksand', sans-serif; }
+.inactive { opacity: .7; }
 
 button {
   border: none;
@@ -40,7 +41,7 @@ button {
 }
 
 button.large { padding: 20px; font-size: 20px; }
-button.medium { padding: 10px 20px; font-size: 20px; }
+button.medium { padding: 10px 19.75px; font-size: 20px; }
 button.white { background-color: white; color: #888; border: 3px solid #fff; }
 button.full { width: 100%; }
 button.white.selected,

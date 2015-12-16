@@ -1,5 +1,6 @@
 'use strict';
 
+var stripe_publishable = process.env.STRIPE_PUBLISHABLE || "pk_test_hmLfFcjIvUb7KCtgJSQnfZOf";
 var stripe_secret = process.env.STRIPE_SECRET || "sk_test_pINzxSOiWLyLBkFlTPg7ctEX";
 var node_env = process.env.NODE_ENV || "development";
 var port = process.env.PORT || 3000;
@@ -19,26 +20,14 @@ if (node_env == "production") {
 };
 
 app.get("/", function (req, res) {
-  res.render("home.ejs");
-});
-
-app.get("/customizer", function (req, res) {
-  res.render("customizer.ejs");
-});
-
-app.get("/checkout", function (req, res) {
-  res.render("checkout.ejs");
+  res.render("home.ejs", {
+    stripe_publishable: stripe_publishable,
+  });
 });
 
 app.get("/partials/:path", function (req, res) {
   var path = req.params.path;
   var file = 'partials/_' + path + '.ejs';
-  res.render(file);
-});
-
-app.get("/icecream/:path", function(req, res) {
-  var path = req.params.path;
-  var file = "icecream/" + path + ".ejs";
   res.render(file);
 });
 
@@ -61,12 +50,8 @@ app.post("/newCharge", function(req, res) {
     }
   });
 
-  res.redirect('/orderconfirmation');
+  res.redirect('/');
 })
-
-app.get("/orderconfirmation", function(req, res) {
-  res.render('orderconfirmation.ejs');
-});
 
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
