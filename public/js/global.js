@@ -1,6 +1,3 @@
-$('#header').load('/partials/header');
-$('#footer').load('/partials/footer');
-
 var ref = new Firebase("https://miniscoopshop.firebaseio.com");
 var currentSessionId;
 

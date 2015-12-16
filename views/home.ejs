@@ -19,61 +19,42 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-
-    <div id="header" class="row">
+    <div id="header">
+      <% include partials/_header.ejs %>
     </div>
 
-    <div id="promotion-bar" class="row">
+    <div id="promotion-bar">
     </div>
 
-    <div class="row" id="homepage-banner">
-      <div class="col-md-7 col-md-offset-5 padding-20">
-        <br><br><br><br>
-        <h1 class="italic pink">mini scoop shop</h1>
-        <h3 class="medium-gray">custom ice cream accessories</h3>
-        <br><br><br>
-        <a href="/customizer">
-          <button class="default large">create your own</button>
-        </a>
+    <div id="home" class="row">
+
+      <form id="createIceCream">
+        <div id="display" class="screen light-gray">
+          <div id="display--image">
+            <% include icecream/top.ejs %>
+            <% include icecream/cone.ejs %>
+          </div>
+          <div id="display--name">
+            <span class="xsmall">name your masterpiece</span>
+            <input type="text" />
+          </div>
+        </div>
+
+        <div id="editor" class="screen">
+          <% include partials/_editor.ejs %>
+        </div>
+      </form>
+
+      <div id="cart" class="screen light-gray hidden">
+      </div>
+      <div id="checkout" class="screen light-gray hidden">
       </div>
     </div>
 
-    <div class="row featured-product--showcase">
-      <h2>featured scoops</h1>
-      <br>
-      <div class="col-md-10 col-md-offset-1">
-        <div class="featured-product">
-          <img src="/assets/featured_placeholder.jpg">
-          <div class="featured-product--caption">
-            <h5 class="featured-product--title">Classic Sundae with Sprinkles</h5>
-            <p class="xsmall">on silver hook earrings</p>
-            <button class="default">add to cart</button>
-          </div>
-        </div>
-        <div class="featured-product">
-          <img src="/assets/featured_placeholder.jpg">
-          <div class="featured-product--caption">
-            <h5 class="featured-product--title">Classic Vanilla with Sprinkles</h5>
-            <p class="xsmall">on silver hook earrings</p>
-            <button class="default">add to cart</button>
-          </div>
-        </div>
-        <div class="featured-product">
-          <img src="/assets/featured_placeholder.jpg">
-          <div class="featured-product--caption">
-            <h5 class="featured-product--title">Classic Vanilla with Sprinkles</h5>
-            <p class="xsmall">on silver hook earrings</p>
-            <button class="default">add to cart</button>
-          </div>
-        </div>
-      </div>
+    <div id="footer">
+      <% include partials/_footer.ejs %>
     </div>
 
-    <div id="footer" class="row">
-    </div>
-
-  </div>
   <script type="text/javascript" src="js/global.js"></script>
   <script type="text/javascript" src="js/home.js"></script>
 </body>
