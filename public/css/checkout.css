@@ -13,16 +13,3 @@
 #payment-form input {
   margin: 10px 0;
 }
-
-.checkout-order-items {
-  overflow: scroll;
-  max-height: 80%;
-}
-
-.checkout-order-items .order-item--preview {
-  padding: 15px 20px;
-}
-
-.checkout-order-items .order-item--preview--details {
-  padding: 25px 0;
-}

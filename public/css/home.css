@@ -9,40 +9,41 @@
   margin-top: 8px;
 }
 
+.icecream path, .icecream polygon {
+  stroke: #000;
+  stroke-width: 2;
+}
+
+.icecream #coneSVG .icecream-cone {
+  fill: #ECAD6B;
+}
+
+.icecream #coneSVG .wafer,
+.icecream #fudge,
+.icecream #sprinkles,
+.icecream #cherry {
+  display: none;
+}
+
+.icecream #hardwareSVG path{
+  stroke: #bbb;
+}
+
 #display--image {
   width: 170px;
   margin: 80px auto 10px auto;
 }
 
-#display--image path, #display--image polygon {
-  stroke: #000;
-  stroke-width: 2;
-}
-
 #display--image #coneSVG {
-  margin-top: -8px;
+  margin-top: -3px;
 }
 
-#display--image #coneSVG .icecream-cone {
-  fill: #ECAD6B;
-}
-
-#display--image #coneSVG .wafer,
-#display--image #fudge,
-#display--image #sprinkles,
-#display--image #cherry {
-  display: none;
-}
 #display--image #hardwareSVG {
   position: absolute;
   margin-left: -45px;
   margin-top: -59px;
   z-index: 100;
   width: 260px;
-}
-
-#display--image #hardwareSVG path{
-  stroke: #bbb;
 }
 
 .editor--option {
@@ -59,7 +60,7 @@
 
 .editor--option--dropdown {
   display: none;
-  padding: 35px 0 20px 0;
+  padding: 30px 0 15px 0;
 }
 
 .editor--option--dropdown .option {
@@ -74,7 +75,7 @@
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  margin: 0 auto;
+  margin: 10px auto;
   background-color: white;
   background-size: 50%;
   background-position: center;

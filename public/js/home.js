@@ -66,8 +66,8 @@ var updateIceCream = function() {
 
   var subtotal = unit_price * quantity;
   var subtotalFormatted = '$' + subtotal.toFixed(2);
-
-  customizeIceCream('#display--image', {
+  key = {
+    'name': 'My Awesome Flavor',
     'flavor': flavor,
     'cone': cone,
     'toppings': toppings,
@@ -76,8 +76,9 @@ var updateIceCream = function() {
     'quantity': quantity,
     'subtotal': subtotal,
     'subtotalFormatted': subtotalFormatted,
-  });
+  };
 
+  customizeIceCream('#display--image', key);
   $('#subtotal').val(subtotalFormatted);
 };
 
@@ -98,6 +99,13 @@ var customizeIceCream = function(containerId, key) {
 };
 
 
-$('#createIceCream').on('submit', function() {
-  console.log('meh');
+$('#createIceCream').on('submit', function(e) {
+  e.preventDefault();
+  var newOrder = ref.child('orders').push(key);
+  ref.child('orders').child(newOrder.key()).update({
+    sessionId: currentSessionId,
+    createdAt: Firebase.ServerValue.TIMESTAMP,
+  });
+  $("#flip-container").flip('true');
+  return false;
 });

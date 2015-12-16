@@ -1,0 +1,42 @@
+#cart #order-items {
+  overflow: scroll;
+  max-height: 80%;
+}
+
+#cart .order-item span { display: block; text-align: left; }
+
+#cart .order--preview {
+  width: 35%;
+  padding: 20px;
+  display: inline-block;
+}
+
+.order--preview {
+  margin: 20px auto 10px auto;
+}
+
+.order--preview #hardwareSVG {
+  position: absolute;
+  margin-left: -13px;
+  margin-top: -20px;
+  z-index: 100;
+  width: 100px;
+}
+
+.order--preview #coneSVG {
+  margin-top: -1px;
+}
+
+#cart .order--details {
+  width: 55%;
+  padding: 40px 20px 0 5px;
+  display: inline-block;
+  text-align: left;
+}
+
+#cartPreview .checkout {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  width: 90%;
+}
