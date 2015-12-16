@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="" />
     <!-- FONTS -->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,300,700|Quicksand:300,700|Playfair-Display:200,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,300,700|Quicksand:300,700|Playfair-Display:100,200,400' rel='stylesheet' type='text/css'>
     <!-- STYLES -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -26,11 +26,12 @@
     <div id="promotion-bar">
     </div>
 
-    <div id="home" class="row">
+    <div id="home">
 
       <form id="createIceCream">
         <div id="display" class="screen light-gray">
           <div id="display--image">
+            <% include icecream/hardware.ejs %>
             <% include icecream/top.ejs %>
             <% include icecream/cone.ejs %>
           </div>

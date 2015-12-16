@@ -1,13 +1,18 @@
+<button class="full pink large playfair">
+  add to cart:
+  <input id="subtotal" readonly="true" class="quicksand" value="$12.00" style="margin-top: 0; max-width: 80px;"></span>
+</button>
+
 <div id="editor--options">
-  <div class="editor--option light-gray">
+  <div class="editor--option opened light-gray">
     <span class="playfair italic">flavor</span>
     <input id="flavor" type="text" readonly="true" value="vanilla" class="quicksand float-right" />
-    <div class="editor--option--dropdown">
+    <div class="editor--option--dropdown" style="display: block;">
       <div class="option" data="chocolate">
         <div class="thumb" style="background-color: #774800;"></div>
         <span class="xsmall">CHOCOLATE</span>
       </div>
-      <div class="option" data="vanilla">
+      <div class="option selected" data="vanilla">
         <div class="thumb" style="background-color: #fff;"></div>
         <span class="xsmall">VANILLA</span>
       </div>
@@ -26,7 +31,7 @@
         <div class="thumb" style="background-image: url('assets/cone_wafer_xs.png');"></div>
         <span class="xsmall">Wafer</span>
       </div>
-      <div class="option" data="sugar">
+      <div class="option selected" data="sugar">
         <div class="thumb" style="background-image: url('assets/cone_sugar_xs.png');"></div>
         <span class="xsmall">Sugar</span>
       </div>
@@ -51,7 +56,26 @@
       </div>
     </div>
   </div>
+
+  <div class="editor--option light-gray">
+    <span class="playfair italic">hardware</span>
+    <input id="hardware" type="text" value="earring" readonly="true" class="quicksand float-right" />
+    <div class="editor--option--dropdown">
+      <div class="option selected" data="earring">
+        <div class="thumb" style="background-image: url('assets/hardware_earring_xs.png');"></div>
+        <span class="xsmall">Earring (PAIR)</span>
+      </div>
+      <div class="option" data="necklace">
+        <div class="thumb" style="background-image: url('assets/hardware_necklace_xs.png');"></div>
+        <span class="xsmall">Necklace</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="editor--option light-gray">
+    <span class="playfair italic">quantity</span>
+    <input id="quantity" type="number" value="1" step="1" min="1" class="quicksand float-right text-right" style="width: 60px;" />
+  </div>
 </div>
 
 <input id="toppings" type="hidden" />
-<button class="full-pink">add to cart: <h2 class="quicksand">$7.50</h2></button>

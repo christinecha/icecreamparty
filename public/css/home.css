@@ -1,6 +1,17 @@
+#editor input[readonly="true"] {
+  background-color: transparent;
+  border: none;
+  max-width: 150px;
+  text-align: right;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
 #display--image {
-  width: 200px;
-  margin: 30px auto;
+  width: 170px;
+  margin: 80px auto 10px auto;
 }
 
 #display--image path, #display--image polygon {
@@ -22,35 +33,42 @@
 #display--image #cherry {
   display: none;
 }
+#display--image #hardwareSVG {
+  position: absolute;
+  margin-left: -45px;
+  margin-top: -59px;
+  z-index: 100;
+  width: 260px;
+}
+
+#display--image #hardwareSVG path{
+  stroke: #bbb;
+}
 
 .editor--option {
   padding: 15px 20px;
   text-align: left;
   font-size: 25px;
-  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
-.editor--option input {
-  background-color: transparent;
-  border: none;
-  max-width: 150px;
-  text-align: right;
-  padding: 0;
-  text-transform: uppercase;
-  font-size: 18px;
-  margin-top: 8px;
+.editor--option:hover,
+.editor--option.opened {
+  border-left: 5px solid #ff8190;
 }
 
 .editor--option--dropdown {
   display: none;
-  padding: 15px 20px;
+  padding: 35px 0 20px 0;
 }
 
 .editor--option--dropdown .option {
   display: inline-block;
-  width: 25%;
-  margin: 3%;
+  width: 31%;
 }
+
+.editor--option--dropdown .option.selected .thumb { border: 3px solid #ff8190; }
+.editor--option--dropdown .option.selected { color: #ff8190; }
 
 .editor--option--dropdown .option .thumb {
   width: 50px;

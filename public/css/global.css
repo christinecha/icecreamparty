@@ -2,6 +2,9 @@
   font-family: 'Quicksand', sans-serif;
   text-align: center;
 }
+*:focus{
+  outline : none;
+}
 
 body { max-width: 1500px; margin-left: auto; margin-right: auto; color: #888; }
 
@@ -24,7 +27,6 @@ ul {
 img { max-width: 100%; }
 
 .italic { font-style: italic; }
-.pink { color: #EFBBB0; }
 .light-gray { background-color: #f2f2f1; }
 .medium-gray { color: #808080; }
 .padding-20 { padding: 20px; }
@@ -32,25 +34,31 @@ img { max-width: 100%; }
 .hidden { display: none; }
 .float-left { float: left; }
 .float-right { float: right; }
-.playfair { font-family: 'Playfair-Display', serif; }
+.playfair { font-family: 'Playfair Display', serif; }
 .quicksand { font-family: 'Quicksand', sans-serif; }
 
-button.default {
+button {
   border: none;
-  border-radius: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
   color: white;
-  background-color: #66cccc;
-  padding: 5px 15px;
+  background-color: #ff8190;
+  padding: 15px;
 }
 
 button.large {
-  padding: 10px 50px;
-  font-size: 18px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+button.full {
+  width: 100%;
 }
 
 button:hover { opacity: .6; }
+
+input[type="number"]{
+  color : transparent;
+  text-shadow : 0 0 0 #888;
+}
 
 .nav {
   height: 50px;

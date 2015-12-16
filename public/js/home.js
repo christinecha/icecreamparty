@@ -6,10 +6,12 @@ var flavors = {
 var key = {};
 
 $('.editor--option').on('click', function() {
+  $(this).siblings().removeClass('opened');
+  $(this).addClass('opened');
   var childDropdown = $(this).children('.editor--option--dropdown');
   if (childDropdown.css('display') == 'none') {
     $('.editor--option--dropdown').hide();
-    childDropdown.slideDown(800);
+    childDropdown.show('slide',{direction:'up'});
   }
 });
 
@@ -30,11 +32,18 @@ $('.editor--option--dropdown .option').on('click', function() {
         toppings.splice(index, 1);
       }
     }
+    $(this).toggleClass('selected');
     $('#toppingsLength').val(toppings.length);
     $('#toppings').val(toppings);
   } else {
+    $(this).siblings().removeClass('selected');
+    $(this).addClass('selected');
     parent.val(selection);
   }
+  updateIceCream();
+});
+
+$('#quantity').on('change', function() {
   updateIceCream();
 });
 
@@ -42,21 +51,41 @@ var updateIceCream = function() {
   var flavor = $('#flavor').val();
   var cone = $('#cone').val();
   var toppings = $('#toppings').val();
+  var hardware = $('#hardware').val();
+  var quantity = $('#quantity').val();
 
   if (toppings.length > 0) {
     toppings = toppings.split(',');
   };
 
+  if (hardware == 'necklace') {
+    var unit_price = 14;
+  } else {
+    var unit_price = 12;
+  };
+
+  var subtotal = unit_price * quantity;
+  var subtotalFormatted = '$' + subtotal.toFixed(2);
+
   customizeIceCream('#display--image', {
     'flavor': flavor,
     'cone': cone,
-    'toppings': toppings
+    'toppings': toppings,
+    'hardware': hardware,
+    'price': unit_price,
+    'quantity': quantity,
+    'subtotal': subtotal,
+    'subtotalFormatted': subtotalFormatted,
   });
+
+  $('#subtotal').val(subtotalFormatted);
 };
+
 
 var customizeIceCream = function(containerId, key) {
   // hide all toggle-able options
   $(containerId + ' #toppingsSVG').children().hide();
+  $(containerId + ' #hardwareSVG').children().hide();
   $(containerId + ' .icecream-cone').hide();
 
   // show only the ones that apply
@@ -65,4 +94,10 @@ var customizeIceCream = function(containerId, key) {
   for (var i = 0; i < key.toppings.length; i++) {
     $(containerId + ' #' + key.toppings[i]).show();
   };
+  $(containerId + ' #' + key.hardware).show();
 };
+
+
+$('#createIceCream').on('submit', function() {
+  console.log('meh');
+});
