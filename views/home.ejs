@@ -12,6 +12,7 @@
     <link href="css/global.css" rel="stylesheet" type="text/css">
     <link href="css/home.css" rel="stylesheet" type="text/css">
     <link href="css/cart.css" rel="stylesheet" type="text/css">
+    <link href="css/checkout.css" rel="stylesheet" type="text/css">
     <!-- JS-->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
@@ -54,8 +55,8 @@
           <% include partials/_cart.ejs %>
         </div>
 
-        <div id="checkout" class="screen light-gray">
-          checkout
+        <div id="checkout" class="screen light-gray text-left">
+          <% include partials/_checkout.ejs %>
         </div>
       </div>
     </div>
@@ -66,6 +67,7 @@
 
   <script type="text/javascript" src="js/global.js"></script>
   <script type="text/javascript" src="js/home.js"></script>
+  <script type="text/javascript" src="js/checkout.js"></script>
 </body>
 
 

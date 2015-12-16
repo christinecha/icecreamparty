@@ -25,7 +25,7 @@ img { max-width: 100%; }
 .light-gray { background-color: #f2f2f1; }
 .medium-gray { color: #808080; }
 .padding-20 { padding: 20px; }
-.xsmall { text-transform: uppercase; font-weight: bold; font-size: 11px; }
+.xsmall { text-transform: uppercase; font-weight: bold; font-size: 11px; letter-spacing: .03em; }
 .inline { display: inline-block; }
 .float-left { float: left; }
 .float-right { float: right; }
@@ -39,12 +39,12 @@ button {
   padding: 15px;
 }
 
-button.large {
-  padding: 20px;
-  font-size: 20px;
-}
-
+button.large { padding: 20px; font-size: 20px; }
+button.medium { padding: 10px 20px; font-size: 20px; }
+button.white { background-color: white; color: #888; border: 3px solid #fff; }
 button.full { width: 100%; }
+button.white.selected,
+button.white:hover { border: 3px solid #ff8190; opacity: 1; }
 button:hover { opacity: .6; }
 
 form { display: inline-block; }

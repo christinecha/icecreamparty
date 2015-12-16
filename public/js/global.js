@@ -12,7 +12,8 @@ var getCartItems = function(){
     var $orderItemTitle = $('<span>').html(order.name);
     var $orderItemHardware = $('<span>').html(order.hardware).addClass('xsmall');
     var $orderItemPrice = $('<span>').html(order.subtotalFormatted);
-    var $orderDetails = $('<div>').addClass('order--details').append($orderItemTitle, $orderItemHardware, $orderItemPrice);
+    var $orderItemQuantity = $('<span>').html('x' + order.quantity);
+    var $orderDetails = $('<div>').addClass('order--details').append($orderItemTitle, $orderItemHardware, $orderItemQuantity, '<br>', $orderItemPrice);
     var $orderPreview = $('<div>').addClass('order-item').append($orderPreview).append($orderDetails);
 
     $('#cart #order-items').append($orderPreview);

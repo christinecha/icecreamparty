@@ -1,15 +1,18 @@
-#checkout-banner {
-  padding: 30px 0;
-  background-color: #eee;
-  margin-bottom: 50px;
+#payment-form {
+  padding: 20px;
+  width: 100%;
 }
 
-#payment-form {
-  border: 1px solid #eee;
-  min-height: 400px;
-  padding: 20px;
+#payment-form .label {
+  display: block;
+  color: #888;
+  text-align: left;
+  padding: 0 0 5px 0;
 }
 
 #payment-form input {
-  margin: 10px 0;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
 }
