@@ -36,6 +36,19 @@ $('#shipping input').on('focus', function() {
   $('.showShipping').addClass('selected');
 });
 
+var newOrder = function() {
+  var order = ref.child('orders').push({
+    status: 'confirmed',
+    sessionId: currentSessionId,
+    createdAt: Firebase.ServerValue.TIMESTAMP,
+  });
+  var orderId = order.key();
+
+  ref.child('order_items').orderByChild('sessionId').equalTo(currentSessionId).on("child_added", function(snapshot) {
+    ref.child('orders').child(orderId).child('order_items').push(snapshot.key());
+  });
+};
+
 function stripeResponseHandler(status, response) {
   var $form = $('#newCharge');
   if (response.error) {
@@ -45,17 +58,16 @@ function stripeResponseHandler(status, response) {
   } else {
     // response contains id and card, which contains additional card details
     var token = response.id;
-    var totalCharge = $('#total-charge').attr('data');
     // Insert the token into the form so it gets submitted to the server
     $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-    $form.append($('<input type="hidden" name="fullName" />').val('Christine Cha'));
-    $form.append($('<input type="hidden" name="totalCharge" />').val(totalCharge));
+    $form.append($('<input type="hidden" name="totalCharge" />').val(10));
+    newOrder();
     // and submit
     $form.get(0).submit();
   }
 };
 
-$('#newCharge').submit(function(e) {
+$('#newCharge').on('submit', function(e) {
   e.preventDefault();
   var $form = $(this);
   $form.find('button').prop('disabled', true);

@@ -1,3 +1,9 @@
+#home input {
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+}
+
 #editor input[readonly="true"] {
   background-color: transparent;
   border: none;
@@ -10,8 +16,8 @@
 }
 
 .icecream path, .icecream polygon {
-  stroke: #000;
-  stroke-width: 2;
+  /*stroke: #aaa;
+  stroke-width: 1;*/
 }
 
 .icecream #coneSVG .icecream-cone {

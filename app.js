@@ -36,12 +36,20 @@ app.post("/newCharge", function(req, res) {
   var stripeToken = req.body.stripeToken;
   var totalCharge = req.body.totalCharge * 100;
   var fullName = req.body.fullName;
+  var email = req.body.billingEmail;
+  var phone = req.body.billingPhone;
+  var name = req.body.shippingName;
 
   var charge = stripe.charges.create({
-    amount: totalCharge,
+    amount: 200,
     currency: "usd",
     source: stripeToken,
-    description: "Example charge"
+    description: "Example charge",
+    metadata: {
+      email: email,
+      phone: phone,
+      name: name,
+    },
   }, function(err, charge) {
     if (err && err.type === 'StripeCardError') {
       console.log(err);

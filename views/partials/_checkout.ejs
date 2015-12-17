@@ -1,4 +1,4 @@
-<form id="newCharge" action="/newCharge" method="post">
+<form id="newCharge" action="/newCharge" method="POST">
   <div class="text-center" style="width: 100%;">
     <button class="showBilling medium white selected" type="button">1. billing</button>
     <button class="showShipping medium white inactive" type="button">2. shipping</button>
@@ -17,34 +17,34 @@
     <div class="form-group inline float-right">
       <span class="xsmall label">Expiration (MM/YY)</span>
       <input type="text" size="2" data-stripe="exp-month" style="width: 70px;" required />
-      <span style="line-height: 28px; font-size: 22px;"> / </span>
+      <span style="line-height: 40px; font-size: 22px;"> / </span>
       <input type="text" size="4" data-stripe="exp-year" style="width: 70px;" required />
     </div>
     <span class="xsmall label">EMAIL</span>
-    <input type="email" size="20" data-stripe="email" required /><br>
+    <input type="email" size="20" name="billingEmail" required /><br>
     <span class="xsmall label">PHONE</span>
-    <input type="text" size="20" data-stripe="phone" required /><br>
+    <input type="text" size="20" name="billingPhone" required /><br>
     <br>
     <button class="showShipping large full playfair" type="button">next: shipping info</button>
   </div>
 
   <div id="shipping">
     <span class="xsmall label">RECIPIENT NAME (if different)</span>
-    <input type="text" size="20" data-stripe="name" /><br>
+    <input type="text" size="20" name="shippingName" /><br>
     <span class="xsmall label">ADDRESS</span>
-    <input type="text" size="20" data-stripe="address-1" required/><br>
-    <input type="text" size="20" data-stripe="address-2" /><br>
+    <input type="text" size="20" data-stripe="address_line1" required/><br>
+    <input type="text" size="20" data-stripe="address_line2" /><br>
     <div class="form-group inline">
       <span class="xsmall label">CITY</span>
-      <input type="text" size="4" data-stripe="city" style="width: 140px;" required />
+      <input type="text" size="4" data-stripe="address_city" style="width: 140px;" required />
     </div>
     <div class="form-group inline">
       <span class="xsmall label">STATE</span>
-      <input type="text" size="4" data-stripe="state" style="width: 60px;" required />
+      <input type="text" size="4" data-stripe="address_state" style="width: 60px;" required />
     </div>
     <div class="form-group inline float-right">
       <span class="xsmall label">ZIP</span>
-      <input type="text" size="2" data-stripe="zip" style="width: 70px;" required />
+      <input type="text" size="2" data-stripe="address_zip" style="width: 70px;" required />
     </div>
     <br><br>
     <button class="large full playfair">submit your order</button>

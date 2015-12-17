@@ -1,12 +1,14 @@
 var ref = new Firebase("https://miniscoopshop.firebaseio.com");
 var currentSessionId;
+var orderItemsCount = 0;
+var currentOrderSubtotal = 0;
+var currentOrderTotal = 0;
 
 //// CART PREVIEW
 
 var getCartItems = function(){
-  var currentOrderTotal = 0;
   console.log('getting orders of ', currentSessionId);
-  ref.child('orders').orderByChild('sessionId').equalTo(currentSessionId).on("child_added", function(snapshot) {
+  ref.child('order_items').orderByChild('sessionId').equalTo(currentSessionId).on("child_added", function(snapshot) {
     var order = snapshot.val();
     var $orderPreview = $( "#display--image" ).clone().attr('id', snapshot.key()).addClass('order--preview');
     var $orderItemTitle = $('<span>').html(order.name);
@@ -17,9 +19,11 @@ var getCartItems = function(){
     var $orderPreview = $('<div>').addClass('order-item').append($orderPreview).append($orderDetails);
 
     $('#cart #order-items').append($orderPreview);
-    currentOrderTotal+= Number(order.subtotal);
-    $('#cart-subtotal').html('$' + currentOrderTotal.toFixed(2));
-    $('#cart-total').html('$' + (currentOrderTotal + 5).toFixed(2)).attr('data', (currentOrderTotal + 5));
+    currentOrderSubtotal+= Number(order.subtotal);
+    currentOrderTotal = currentOrderSubtotal + 5;
+    orderItemsCount+= 1;
+    $('#cart-subtotal').html('$' + currentOrderSubtotal.toFixed(2));
+    $('#cart-total').html('$' + currentOrderTotal.toFixed(2));
 
     customizeIceCream('#' + snapshot.key(), order);
   });

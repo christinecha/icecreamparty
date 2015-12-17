@@ -3,7 +3,18 @@ var flavors = {
   'vanilla': '#ffffff',
   'strawberry': '#ffb3b7'
 };
-var key = {};
+
+var key = {
+  'name': 'Untitled',
+  'flavor': 'vanilla',
+  'cone': 'sugar',
+  'toppings': '',
+  'hardware': 'earrings',
+  'price': 12,
+  'quantity': 1,
+  'subtotal': 12,
+  'subtotalFormatted': '$12.00',
+};
 
 $('.editor--option').on('click', function() {
   $(this).siblings().removeClass('opened');
@@ -47,12 +58,17 @@ $('#quantity').on('change', function() {
   updateIceCream();
 });
 
+$('#name').on('change', function() {
+  updateIceCream();
+});
+
 var updateIceCream = function() {
   var flavor = $('#flavor').val();
   var cone = $('#cone').val();
   var toppings = $('#toppings').val();
   var hardware = $('#hardware').val();
   var quantity = $('#quantity').val();
+  var name = $('#name').val();
 
   if (toppings.length > 0) {
     toppings = toppings.split(',');
@@ -67,7 +83,7 @@ var updateIceCream = function() {
   var subtotal = unit_price * quantity;
   var subtotalFormatted = '$' + subtotal.toFixed(2);
   key = {
-    'name': 'My Awesome Flavor',
+    'name': name,
     'flavor': flavor,
     'cone': cone,
     'toppings': toppings,
@@ -77,7 +93,7 @@ var updateIceCream = function() {
     'subtotal': subtotal,
     'subtotalFormatted': subtotalFormatted,
   };
-
+  console.log(key);
   customizeIceCream('#display--image', key);
   $('#subtotal').val(subtotalFormatted);
 };
@@ -101,8 +117,8 @@ var customizeIceCream = function(containerId, key) {
 
 $('#createIceCream').on('submit', function(e) {
   e.preventDefault();
-  var newOrder = ref.child('orders').push(key);
-  ref.child('orders').child(newOrder.key()).update({
+  var newOrder = ref.child('order_items').push(key);
+  ref.child('order_items').child(newOrder.key()).update({
     sessionId: currentSessionId,
     createdAt: Firebase.ServerValue.TIMESTAMP,
   });
